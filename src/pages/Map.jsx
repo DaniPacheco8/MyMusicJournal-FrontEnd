@@ -1,11 +1,13 @@
 
   import { useEffect, useState } from 'react';
-  import { MapPin, ArrowLeft } from 'lucide-react';
+  import { MapPin } from 'lucide-react';
   import { getConcertsForMap } from '../api/concertService';
+  import { Navbar } from '../components/layout/Navbar';
+  import { SecondaryNav } from '../components/layout/SecondaryNav';
   import { MapDisplay } from '../components/map/MapDisplay';
   import styles from './Map.module.scss';
 
-  export const Map = ({ onBack }) => {
+  export const Map = () => {
     const [concerts, setConcerts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -29,21 +31,16 @@
     }, []);
 
     return (
-      <div className={styles.mapPage}>
-        <div className={styles.header}>
-          <button
-            onClick={onBack}
-            className={styles.backButton}
-            aria-label="Go back"
-          >
-            <ArrowLeft size={20} />
-            Back
-          </button>
-          <h1 className={styles.title}>
-            <MapPin size={28} />
-            My Concert Map
-          </h1>
-        </div>
+      <>
+        <Navbar />
+        <SecondaryNav />
+        <div className={styles.mapPage}>
+          <div className={styles.header}>
+            <h1 className={styles.title}>
+              <MapPin size={28} />
+              My Concert Map
+            </h1>
+          </div>
 
         {error && (
           <div className={styles.error} role="alert">
@@ -62,6 +59,7 @@
         ) : (
           <MapDisplay concerts={concerts} />
         )}
-      </div>
+        </div>
+      </>
     );
   };

@@ -18,7 +18,7 @@ import { Navigate } from 'react-router-dom';
     }
 
     if (!isAuthenticated) {
-      return <Navigate to="/login" replace />;
+      return <Navigate to="/" replace />;
     }
 
     return children;

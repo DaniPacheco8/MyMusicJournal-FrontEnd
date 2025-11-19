@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
   import { getJournalEntries, deleteJournalEntry } from '../../api/journalService';
+  import { Navbar } from '../layout/Navbar';
+  import { SecondaryNav } from '../layout/SecondaryNav';
   import { ConcertsHeader } from './ConcertsHeader';
   import { ConcertsFilter } from './ConcertsFilter';
   import { ConcertCard } from './ConcertCard';
@@ -99,11 +101,14 @@ import { useState, useEffect } from 'react';
     };
 
     return (
-      <div className={styles.dashboard}>
-        <ConcertsHeader
-          concertCount={filteredConcerts.length}
-          onAddClick={onAddConcert}
-        />
+      <>
+        <Navbar />
+        <SecondaryNav />
+        <div className={styles.dashboard}>
+          <ConcertsHeader
+            concertCount={filteredConcerts.length}
+            onAddClick={onAddConcert}
+          />
 
         <ConcertsFilter
           filterYear={filterYear}
@@ -139,6 +144,7 @@ import { useState, useEffect } from 'react';
             ))}
           </div>
         )}
-      </div>
+        </div>
+      </>
     );
   };
