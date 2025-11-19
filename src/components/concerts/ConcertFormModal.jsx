@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
   } from '../../utils/validators';
   import { FormField } from './FormField';
   import { RatingField } from './RatingField';
+  import { useToast } from '../../hooks/useToast';
   import styles from '../../styles/components/ConcertFormModal.module.scss';
 
   export const ConcertFormModal = ({ isOpen, entry, onClose, onSuccess }) => {
@@ -27,6 +28,7 @@ import { useState, useEffect } from 'react';
 
     const [errors, setErrors] = useState({});
     const [isLoading, setIsLoading] = useState(false);
+    const { success, error: showError } = useToast();
 
     useEffect(() => {
       const fetchConcerts = async () => {
@@ -119,6 +121,7 @@ import { useState, useEffect } from 'react';
       e.preventDefault();
 
       if (!validateForm()) {
+        showError('Please fix the errors in the form');
         return;
       }
 
@@ -134,15 +137,19 @@ import { useState, useEffect } from 'react';
 
         if (entry) {
           await updateJournalEntry(entry.id, entryData);
+          success('Concert entry updated successfully');
         } else {
           await createJournalEntry(entryData);
+          success('Concert added to your diary successfully');
         }
 
         onSuccess();
         onClose();
       } catch (error) {
+        const errorMessage = error.message || 'Failed to save concert. Please try again.';
+        showError(errorMessage);
         setErrors({
-          submit: error.message || 'Failed to save concert. Please try again.',
+          submit: errorMessage,
         });
       } finally {
         setIsLoading(false);

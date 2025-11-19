@@ -7,6 +7,7 @@ import { useState } from 'react';
     isValidPassword,
     passwordsMatch,
   } from '../../utils/validators';
+  import { useToast } from '../../hooks/useToast';
   import styles from '../../styles/components/Auth.module.scss';
 
   export const Register = () => {
@@ -19,6 +20,7 @@ import { useState } from 'react';
     const [showPasswordConfirmation, setShowPasswordConfirmation] = useState(false);
 
     const { register, setAuthError } = useAuth();
+    const { error: showError, success } = useToast();
     const navigate = useNavigate();
 
     const validateForm = () => {
@@ -50,6 +52,7 @@ import { useState } from 'react';
       e.preventDefault();
 
       if (!validateForm()) {
+        showError('Please fix the errors in the form');
         return;
       }
 
@@ -62,10 +65,12 @@ import { useState } from 'react';
           { id: response.id, email: response.email },
           response.token || ''
         );
+        success('Account created successfully');
         navigate('/dashboard');
       } catch (error) {
         const errorMessage = error.message || 'Registration failed. Please try again.';
         setAuthError(errorMessage);
+        showError(errorMessage);
         setErrors({ submit: errorMessage });
       } finally {
         setIsLoading(false);

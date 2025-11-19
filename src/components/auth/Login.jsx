@@ -3,6 +3,7 @@ import { useState } from 'react';
   import { useAuth } from '../../hooks/useAuth';
   import { loginUser } from '../../api/authService';
   import { isValidEmail, isValidPassword } from '../../utils/validators';
+  import { useToast } from '../../hooks/useToast';
   import styles from '../../styles/components/Auth.module.scss';
 
   export const Login = () => {
@@ -13,6 +14,7 @@ import { useState } from 'react';
     const [showPassword, setShowPassword] = useState(false);
 
     const { login, setAuthError } = useAuth();
+    const { error: showError, success } = useToast();
     const navigate = useNavigate();
 
     const validateForm = () => {
@@ -38,6 +40,7 @@ import { useState } from 'react';
       e.preventDefault();
 
       if (!validateForm()) {
+        showError('Please fix the errors in the form');
         return;
       }
 
@@ -50,10 +53,12 @@ import { useState } from 'react';
           { id: response.id, email: response.email },
           response.token
         );
+        success('Logged in successfully');
         navigate('/dashboard');
       } catch (error) {
         const errorMessage = error.message || 'Login failed. Please try again.';
         setAuthError(errorMessage);
+        showError(errorMessage);
         setErrors({ submit: errorMessage });
       } finally {
         setIsLoading(false);

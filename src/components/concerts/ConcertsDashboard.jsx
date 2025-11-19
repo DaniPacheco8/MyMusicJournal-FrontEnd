@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react';
   import { ConcertsHeader } from './ConcertsHeader';
   import { ConcertsFilter } from './ConcertsFilter';
   import { ConcertCard } from './ConcertCard';
+  import { LoadingSpinner } from '../common/LoadingSpinner';
+  import { useToast } from '../../hooks/useToast';
   import styles from '../../styles/components/ConcertsDashboard.module.scss';
 
   export const ConcertsDashboard = ({ onAddConcert, onEditConcert }) => {
@@ -13,18 +15,17 @@ import { useState, useEffect } from 'react';
     const [filterYear, setFilterYear] = useState('');
     const [filterCity, setFilterCity] = useState('');
     const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
     const [availableYears, setAvailableYears] = useState([]);
+    const { success, error: showError } = useToast();
 
     useEffect(() => {
       const fetchConcerts = async () => {
         try {
           setIsLoading(true);
-          setError(null);
           const data = await getJournalEntries();
           setConcerts(data);
         } catch (err) {
-          setError('Failed to load your concert diary. Please try again.');
+          showError('Failed to load your concert diary. Please try again.');
           console.error('Error fetching journal entries:', err);
         } finally {
           setIsLoading(false);
@@ -40,7 +41,7 @@ import { useState, useEffect } from 'react';
 
       window.addEventListener('concert-updated', handleConcertUpdate);
       return () => window.removeEventListener('concert-updated', handleConcertUpdate);
-    }, []);
+    }, [showError]);
 
     useEffect(() => {
       let filtered = concerts;
@@ -81,8 +82,9 @@ import { useState, useEffect } from 'react';
         setConcerts((prevConcerts) =>
           prevConcerts.filter((concert) => concert.id !== id)
         );
+        success('Concert deleted successfully');
       } catch (err) {
-        setError('Failed to delete concert. Please try again.');
+        showError('Failed to delete concert. Please try again.');
         console.error('Error deleting concert:', err);
       }
     };
@@ -92,8 +94,9 @@ import { useState, useEffect } from 'react';
         setIsLoading(true);
         const data = await getJournalEntries();
         setConcerts(data);
+        success('Concerts refreshed successfully');
       } catch (err) {
-        setError('Failed to refresh entries. Please try again.');
+        showError('Failed to refresh entries. Please try again.');
         console.error('Error refreshing entries:', err);
       } finally {
         setIsLoading(false);
@@ -118,16 +121,8 @@ import { useState, useEffect } from 'react';
           availableYears={availableYears}
         />
 
-        {error && (
-          <div className={styles.error} role="alert">
-            {error}
-          </div>
-        )}
-
         {isLoading ? (
-          <div className={styles.loading} role="status" aria-live="polite">
-            Loading concerts...
-          </div>
+          <LoadingSpinner />
         ) : filteredConcerts.length === 0 ? (
           <div className={styles.emptyState} role="status">
             <p>No concerts found. Start by adding your first concert!</p>
