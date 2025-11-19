@@ -26,7 +26,6 @@ const renderApp = () => {
 
 describe('Navigation Flow Integration Tests', () => {
   beforeEach(() => {
-    // Clear localStorage antes de cada teste
     localStorage.clear();
   });
 
@@ -56,7 +55,6 @@ describe('Navigation Flow Integration Tests', () => {
   it('should show Features section on landing page', () => {
     renderApp();
 
-    // Features section tem um heading com "Features"
     const featuresSectionExists =
       document.querySelector('[id="features"]') !== null;
     expect(featuresSectionExists).toBe(true);
@@ -65,7 +63,6 @@ describe('Navigation Flow Integration Tests', () => {
   it('should show How It Works section on landing page', () => {
     renderApp();
 
-    // How It Works section tem um heading com id "how-it-works"
     const howItWorksSectionExists =
       document.querySelector('[id="how-it-works"]') !== null;
     expect(howItWorksSectionExists).toBe(true);
@@ -76,8 +73,6 @@ describe('Navigation Flow Integration Tests', () => {
 
     renderApp();
 
-    // Quando não autenticado, deve redirecionar para home
-    // Portanto, não deve mostrar conteúdo do dashboard
     await waitFor(() => {
       expect(screen.queryByText('Loading concerts...')).not.toBeInTheDocument();
     });
@@ -88,7 +83,6 @@ describe('Navigation Flow Integration Tests', () => {
 
     renderApp();
 
-    // Quando não autenticado, deve redirecionar
     await waitFor(() => {
       expect(screen.queryByText('My Concert Map')).not.toBeInTheDocument();
     });
@@ -104,7 +98,6 @@ describe('Navigation Flow Integration Tests', () => {
   it('should have correct link structure in navigation', () => {
     renderApp();
 
-    // Verifica que os links existem e apontam para os lugares certos
     const signInLink = screen.getByText('Sign In').closest('a');
     const registerLink = screen.getByText('Register').closest('a');
 
@@ -124,7 +117,6 @@ describe('Navigation Flow Integration Tests', () => {
 
     renderApp();
 
-    // Deve redirecionar para home, então navbar deve estar visível
     const navbars = screen.getAllByText('MyMusicJournal');
     expect(navbars.length).toBeGreaterThan(0);
   });
