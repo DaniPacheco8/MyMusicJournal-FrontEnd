@@ -1,5 +1,5 @@
  import { Logo } from '../common/Logo';
-  import styles from './Footer.module.scss';
+  import styles from '../../styles/components/Footer.module.scss';
 
   export const Footer = () => {
     const currentYear = new Date().getFullYear();

@@ -1,4 +1,4 @@
-import styles from './FormField.module.scss';
+import styles from '../../styles/components/FormField.module.scss';
 
 export const FormField = ({
   id,

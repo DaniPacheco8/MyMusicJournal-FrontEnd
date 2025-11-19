@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import styles from './SecondaryNav.module.scss';
+import styles from '../../styles/components/SecondaryNav.module.scss';
 
 export const SecondaryNav = () => {
   const location = useLocation();

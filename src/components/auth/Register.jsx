@@ -7,7 +7,7 @@ import { useState } from 'react';
     isValidPassword,
     passwordsMatch,
   } from '../../utils/validators';
-  import styles from './Auth.module.scss';
+  import styles from '../../styles/components/Auth.module.scss';
 
   export const Register = () => {
     const [email, setEmail] = useState('');

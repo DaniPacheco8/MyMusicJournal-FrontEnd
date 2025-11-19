@@ -1,5 +1,5 @@
 import { Star } from 'lucide-react';
-  import styles from './RatingField.module.scss';
+  import styles from '../../styles/components/RatingField.module.scss';
 
   export const RatingField = ({ value, onChange, error }) => {
     return (

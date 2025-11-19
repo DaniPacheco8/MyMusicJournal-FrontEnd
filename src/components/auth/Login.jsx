@@ -3,7 +3,7 @@ import { useState } from 'react';
   import { useAuth } from '../../hooks/useAuth';
   import { loginUser } from '../../api/authService';
   import { isValidEmail, isValidPassword } from '../../utils/validators';
-  import styles from './Auth.module.scss';
+  import styles from '../../styles/components/Auth.module.scss';
 
   export const Login = () => {
     const [email, setEmail] = useState('');

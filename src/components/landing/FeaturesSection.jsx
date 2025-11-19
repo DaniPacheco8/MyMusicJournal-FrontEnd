@@ -1,5 +1,5 @@
 import { Calendar, Star, MapPin } from 'lucide-react';
-  import styles from './FeaturesSection.module.scss';
+  import styles from '../../styles/components/FeaturesSection.module.scss';
 
   const features = [
     {

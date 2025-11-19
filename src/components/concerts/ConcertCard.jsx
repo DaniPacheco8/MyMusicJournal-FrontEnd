@@ -1,5 +1,5 @@
 import { Calendar, MapPin, Star, Edit2, Trash2 } from 'lucide-react';
-  import styles from './ConcertCard.module.scss';
+  import styles from '../../styles/components/ConcertCard.module.scss';
 
   export const ConcertCard = ({ concert, onEdit, onDelete }) => {
     const formatDate = (dateString) => {

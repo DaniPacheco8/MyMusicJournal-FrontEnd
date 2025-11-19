@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
   import L from 'leaflet';
   import 'leaflet/dist/leaflet.css';
-  import styles from './MapDisplay.module.scss';
+  import styles from '../../styles/components/MapDisplay.module.scss';
 
   delete L.Icon.Default.prototype._getIconUrl;
   L.Icon.Default.mergeOptions({

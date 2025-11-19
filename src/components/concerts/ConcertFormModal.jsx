@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
   } from '../../utils/validators';
   import { FormField } from './FormField';
   import { RatingField } from './RatingField';
-  import styles from './ConcertFormModal.module.scss';
+  import styles from '../../styles/components/ConcertFormModal.module.scss';
 
   export const ConcertFormModal = ({ isOpen, entry, onClose, onSuccess }) => {
     const [allConcerts, setAllConcerts] = useState([]);

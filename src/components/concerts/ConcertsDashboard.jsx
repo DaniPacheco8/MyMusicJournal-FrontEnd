@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
   import { ConcertsHeader } from './ConcertsHeader';
   import { ConcertsFilter } from './ConcertsFilter';
   import { ConcertCard } from './ConcertCard';
-  import styles from './ConcertsDashboard.module.scss';
+  import styles from '../../styles/components/ConcertsDashboard.module.scss';
 
   export const ConcertsDashboard = ({ onAddConcert, onEditConcert }) => {
     const [concerts, setConcerts] = useState([]);

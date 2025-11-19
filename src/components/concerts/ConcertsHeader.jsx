@@ -1,5 +1,5 @@
 import { Plus } from 'lucide-react';
-  import styles from './ConcertsHeader.module.scss';
+  import styles from '../../styles/components/ConcertsHeader.module.scss';
 
   export const ConcertsHeader = ({ concertCount, onAddClick }) => {
     return (

@@ -1,4 +1,4 @@
-import styles from './HowItWorksSection.module.scss';
+import styles from '../../styles/components/HowItWorksSection.module.scss';
 
   const steps = [
     {

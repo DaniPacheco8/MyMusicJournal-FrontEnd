@@ -5,7 +5,7 @@
   import { Navbar } from '../components/layout/Navbar';
   import { SecondaryNav } from '../components/layout/SecondaryNav';
   import { MapDisplay } from '../components/map/MapDisplay';
-  import styles from './Map.module.scss';
+  import styles from '../styles/components/Map.module.scss';
 
   export const Map = () => {
     const [concerts, setConcerts] = useState([]);

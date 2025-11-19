@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import { Logo } from '../common/Logo';
-import styles from './Navbar.module.scss';
+import styles from '../../styles/components/Navbar.module.scss';
 
 export const Navbar = () => {
   const location = useLocation();

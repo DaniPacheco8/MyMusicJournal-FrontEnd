@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-  import styles from './HeroSection.module.scss';
+  import styles from '../../styles/components/HeroSection.module.scss';
 
   export const HeroSection = () => {
     return (

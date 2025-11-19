@@ -1,4 +1,4 @@
-import styles from './CTASection.module.scss';
+import styles from '../../styles/components/CTASection.module.scss';
 
   export const CTASection = () => {
     return (

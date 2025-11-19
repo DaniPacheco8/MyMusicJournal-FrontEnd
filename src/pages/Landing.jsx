@@ -4,7 +4,7 @@ import { Navbar } from '../components/layout/Navbar';
   import { HowItWorksSection } from '../components/landing/HowItWorksSection';
   import { CTASection } from '../components/landing/CTASection';
   import { Footer } from '../components/layout/Footer';
-  import styles from './Landing.module.scss';
+  import styles from '../styles/components/Landing.module.scss';
 
   export const Landing = () => {
     return (
