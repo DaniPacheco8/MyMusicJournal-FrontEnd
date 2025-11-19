@@ -1,13 +1,15 @@
 import styles from './ConcertsFilter.module.scss';
 
-  export const ConcertsFilter = ({ 
-    filterYear, 
-    onYearChange, 
-    filterCity, 
-    onCityChange 
+  export const ConcertsFilter = ({
+    filterYear,
+    onYearChange,
+    filterCity,
+    onCityChange,
+    availableYears = []
   }) => {
-    const currentYear = new Date().getFullYear();
-    const years = [currentYear, currentYear - 1, currentYear - 2];
+    const years = availableYears.length > 0
+      ? availableYears.sort((a, b) => b - a)
+      : [];
 
     return (
       <div className={styles.filterContainer}>

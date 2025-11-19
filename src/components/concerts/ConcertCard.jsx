@@ -21,15 +21,15 @@ import { Calendar, MapPin, Star, Edit2, Trash2 } from 'lucide-react';
               : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
           }}
           role="img"
-          aria-label={`Concert image for ${concert.artist}`}
+          aria-label={`Concert image for ${concert.concertTitle}`}
         >
           <div className={styles.imageOverlay} />
           <div className={styles.genreBadge}>{concert.genre || 'Music'}</div>
           <div className={styles.cardInfo}>
-            <h3 className={styles.artist}>{concert.artist}</h3>
+            <h3 className={styles.artist}>{concert.concertTitle}</h3>
             <div className={styles.dateInfo}>
               <Calendar size={16} aria-hidden="true" />
-              <span>{formatDate(concert.date)}</span>
+              <span>{concert.date ? formatDate(concert.date) : 'No date'}</span>
             </div>
           </div>
         </div>
@@ -38,7 +38,7 @@ import { Calendar, MapPin, Star, Edit2, Trash2 } from 'lucide-react';
           <div className={styles.venue}>
             <MapPin size={16} aria-hidden="true" />
             <span className={styles.venueText}>
-              {concert.venue}, {concert.city}
+              {concert.city || 'No location'}
             </span>
           </div>
 
@@ -59,7 +59,7 @@ import { Calendar, MapPin, Star, Edit2, Trash2 } from 'lucide-react';
             <button
               onClick={() => onEdit(concert)}
               className={styles.editButton}
-              aria-label={`Edit concert: ${concert.artist}`}
+              aria-label={`Edit entry: ${concert.concertTitle}`}
             >
               <Edit2 size={16} />
               Edit
@@ -67,7 +67,7 @@ import { Calendar, MapPin, Star, Edit2, Trash2 } from 'lucide-react';
             <button
               onClick={() => onDelete(concert.id)}
               className={styles.deleteButton}
-              aria-label={`Delete concert: ${concert.artist}`}
+              aria-label={`Delete entry: ${concert.concertTitle}`}
             >
               <Trash2 size={16} />
             </button>
