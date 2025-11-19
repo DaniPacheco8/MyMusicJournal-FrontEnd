@@ -14,7 +14,6 @@ import { useState, useEffect } from 'react';
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // Fetch concerts on mount
     useEffect(() => {
       const fetchConcerts = async () => {
         try {
@@ -33,7 +32,6 @@ import { useState, useEffect } from 'react';
       fetchConcerts();
     }, []);
 
-    // Filter concerts whenever filters change
     useEffect(() => {
       let filtered = concerts;
 
