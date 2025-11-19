@@ -30,6 +30,14 @@ import { useState, useEffect } from 'react';
       };
 
       fetchConcerts();
+
+      // Listen for concert updates
+      const handleConcertUpdate = () => {
+        fetchConcerts();
+      };
+
+      window.addEventListener('concert-updated', handleConcertUpdate);
+      return () => window.removeEventListener('concert-updated', handleConcertUpdate);
     }, []);
 
     useEffect(() => {
