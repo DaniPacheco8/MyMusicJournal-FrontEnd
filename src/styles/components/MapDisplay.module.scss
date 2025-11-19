@@ -1,70 +1,70 @@
 .mapContainer {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    overflow: hidden;
-    position: relative;
-  }
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
 
-  .mapElement {
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    min-height: 500px;
+.mapElement {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
 
-    // Leaflet styles customization
-    :global(.leaflet-container) {
-      font-family: inherit;
-    }
-
-    :global(.leaflet-popup) {
-      z-index: 1000;
-    }
-
-    :global(.leaflet-popup-content-wrapper) {
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    :global(.leaflet-popup-tip) {
-      background: white;
-    }
-  }
-
-  .popup {
+  // Leaflet styles customization
+  :global(.leaflet-container) {
     font-family: inherit;
-    font-size: 0.95rem;
-    color: #1a1a2e;
-    line-height: 1.5;
-
-    strong {
-      display: block;
-      margin-bottom: 0.25rem;
-      font-weight: 600;
-    }
-
-    small {
-      display: block;
-      margin-top: 0.5rem;
-      color: #6b7280;
-    }
   }
 
-  .mapInfo {
-    padding: 1rem;
+  :global(.leaflet-popup) {
+    z-index: 1000;
+  }
+
+  :global(.leaflet-popup-content-wrapper) {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  :global(.leaflet-popup-tip) {
     background: white;
-    border-top: 1px solid #e5e7eb;
-    text-align: center;
-    font-size: 0.875rem;
+  }
+}
+
+.popup {
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+  line-height: 1.5;
+
+  strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+  }
+
+  small {
+    display: block;
+    margin-top: 0.5rem;
     color: #6b7280;
-
-    p {
-      margin: 0;
-    }
   }
+}
 
-  @media (max-width: 768px) {
-    .mapElement {
-      min-height: 300px;
-    }
+.mapInfo {
+  padding: 1rem;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+
+  p {
+    margin: 0;
   }
+}
+
+@media (max-width: 768px) {
+  .mapElement {
+    min-height: 300px;
+  }
+}

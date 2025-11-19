@@ -51,7 +51,10 @@ export const Navbar = () => {
               <a href="/login" className={`${styles.btn} ${styles.btnOutline}`}>
                 Sign In
               </a>
-              <a href="/register" className={`${styles.btn} ${styles.btnPrimary}`}>
+              <a
+                href="/register"
+                className={`${styles.btn} ${styles.btnPrimary}`}
+              >
                 Register
               </a>
             </>

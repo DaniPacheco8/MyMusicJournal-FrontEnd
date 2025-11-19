@@ -12,7 +12,7 @@ export class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error('ErrorBoundary caught an error:', error, errorInfo);
+    // Error boundary caught an error - display UI to user
   }
 
   resetError = () => {
@@ -27,7 +27,8 @@ export class ErrorBoundary extends Component {
             <h1 className={styles.title}>Oops! Algo deu errado</h1>
 
             <p className={styles.message}>
-              Desculpe, ocorreu um erro inesperado. Por favor, tente recarregar a página.
+              Desculpe, ocorreu um erro inesperado. Por favor, tente recarregar
+              a página.
             </p>
 
             {process.env.NODE_ENV === 'development' && (
@@ -39,10 +40,7 @@ export class ErrorBoundary extends Component {
               </details>
             )}
 
-            <button
-              onClick={this.resetError}
-              className={styles.button}
-            >
+            <button onClick={this.resetError} className={styles.button}>
               Tentar novamente
             </button>
 

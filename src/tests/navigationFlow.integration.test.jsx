@@ -57,7 +57,8 @@ describe('Navigation Flow Integration Tests', () => {
     renderApp();
 
     // Features section tem um heading com "Features"
-    const featuresSectionExists = document.querySelector('[id="features"]') !== null;
+    const featuresSectionExists =
+      document.querySelector('[id="features"]') !== null;
     expect(featuresSectionExists).toBe(true);
   });
 
@@ -65,7 +66,8 @@ describe('Navigation Flow Integration Tests', () => {
     renderApp();
 
     // How It Works section tem um heading com id "how-it-works"
-    const howItWorksSectionExists = document.querySelector('[id="how-it-works"]') !== null;
+    const howItWorksSectionExists =
+      document.querySelector('[id="how-it-works"]') !== null;
     expect(howItWorksSectionExists).toBe(true);
   });
 

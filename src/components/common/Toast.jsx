@@ -28,13 +28,9 @@ export const ToastContainer = () => {
           role="alert"
           aria-live="polite"
         >
-          <div className={styles.icon}>
-            {getIcon(toast.type)}
-          </div>
+          <div className={styles.icon}>{getIcon(toast.type)}</div>
 
-          <div className={styles.message}>
-            {toast.message}
-          </div>
+          <div className={styles.message}>{toast.message}</div>
 
           <button
             onClick={() => removeToast(toast.id)}

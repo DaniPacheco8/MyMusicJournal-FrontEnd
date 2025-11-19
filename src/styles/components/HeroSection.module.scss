@@ -1,105 +1,105 @@
 .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6rem 1rem 5rem;
-    overflow: hidden;
-    margin-top: 70px;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1rem 5rem;
+  overflow: hidden;
+  margin-top: 70px;
 
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #3730a3 0%, #312e81 50%, #3730a3 100%);
-      z-index: -1;
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #3730a3 0%, #312e81 50%, #3730a3 100%);
+    z-index: -1;
   }
+}
 
-  .heroContent {
-    max-width: 64rem;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    z-index: 10;
-  }
+.heroContent {
+  max-width: 64rem;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
 
-  .heroBadge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    margin-bottom: 2rem;
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 2rem;
 
-    span {
-      color: white;
-      font-weight: 700;
-      font-size: 0.875rem;
-    }
-  }
-
-  .heroTitle {
-    font-size: 3.75rem;
-    font-weight: 900;
+  span {
     color: white;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+}
+
+.heroTitle {
+  font-size: 3.75rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.gradientText {
+  background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroDescription {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #5a67d8 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 1.125rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  text-decoration: none;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.5);
   }
 
-  .gradientText {
-    background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  &:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
   }
 
   .heroDescription {
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 2.5rem;
-    max-width: 48rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .heroBtn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1.25rem 2.5rem;
-    background: linear-gradient(135deg, #667eea 0%, #5a67d8 100%);
-    color: white;
-    font-weight: 700;
     font-size: 1.125rem;
-    border-radius: 1rem;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-    text-decoration: none;
-
-    &:hover {
-      transform: scale(1.05);
-      box-shadow: 0 20px 40px rgba(102, 126, 234, 0.5);
-    }
-
-    &:focus {
-      outline: 2px solid white;
-      outline-offset: 2px;
-    }
   }
-
-  @media (max-width: 768px) {
-    .heroTitle {
-      font-size: 2.5rem;
-    }
-
-    .heroDescription {
-      font-size: 1.125rem;
-    }
-  }
+}

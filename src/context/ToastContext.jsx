@@ -24,21 +24,33 @@ export const ToastProvider = ({ children }) => {
     setToasts((prev) => prev.filter((toast) => toast.id !== id));
   }, []);
 
-  const success = useCallback((message, duration = 3000) => {
-    return addToast(message, 'success', duration);
-  }, [addToast]);
+  const success = useCallback(
+    (message, duration = 3000) => {
+      return addToast(message, 'success', duration);
+    },
+    [addToast]
+  );
 
-  const error = useCallback((message, duration = 5000) => {
-    return addToast(message, 'error', duration);
-  }, [addToast]);
+  const error = useCallback(
+    (message, duration = 5000) => {
+      return addToast(message, 'error', duration);
+    },
+    [addToast]
+  );
 
-  const warning = useCallback((message, duration = 4000) => {
-    return addToast(message, 'warning', duration);
-  }, [addToast]);
+  const warning = useCallback(
+    (message, duration = 4000) => {
+      return addToast(message, 'warning', duration);
+    },
+    [addToast]
+  );
 
-  const info = useCallback((message, duration = 3000) => {
-    return addToast(message, 'info', duration);
-  }, [addToast]);
+  const info = useCallback(
+    (message, duration = 3000) => {
+      return addToast(message, 'info', duration);
+    },
+    [addToast]
+  );
 
   const value = {
     toasts,
@@ -51,8 +63,6 @@ export const ToastProvider = ({ children }) => {
   };
 
   return (
-    <ToastContext.Provider value={value}>
-      {children}
-    </ToastContext.Provider>
+    <ToastContext.Provider value={value}>{children}</ToastContext.Provider>
   );
 };
