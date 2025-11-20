@@ -1,0 +1,58 @@
+.secondaryNav {
+  position: fixed;
+  width: 100%;
+  z-index: 49;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  top: 70px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60px;
+}
+
+.navTabs {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navTab {
+  background: none;
+  border: none;
+  color: #4b5563;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0.5rem 0;
+  border-bottom: 3px solid transparent;
+  font-size: 1rem;
+
+  &:hover {
+    color: #667eea;
+  }
+
+  &.active {
+    color: #667eea;
+    border-bottom-color: #667eea;
+  }
+}
+
+@media (max-width: 768px) {
+  .navTabs {
+    gap: 1rem;
+  }
+
+  .navTab {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
