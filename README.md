@@ -2,6 +2,9 @@
 
 A modern web application for tracking and documenting concerts and musical events. Built with React and Vite, this application allows users to create, edit, and delete concert entries with detailed information including artist, date, venue, location, rating, and personal notes.
 
+<img width="1210" height="735" alt="img" src="https://github.com/user-attachments/assets/e76a8062-173a-4ee9-8b77-8bcd1309f843" />
+
+
 ## 🎯 Project Overview
 
 MyMusicJournal is a concert diary application that helps music enthusiasts document and manage their concert experiences. Users can browse concerts on an interactive map, rate performances, write personal notes, and build a comprehensive music history. The application features user authentication, real-time data synchronization, and an intuitive interface designed for music lovers.
