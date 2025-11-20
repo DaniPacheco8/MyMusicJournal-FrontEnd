@@ -237,11 +237,6 @@ npm test -- --watch
 npm test -- --coverage
 ```
 
-### Test Files
-
-- `src/tests/validators.test.jsx` - 32 unit tests for form validators
-- `src/tests/navigationFlow.integration.test.jsx` - 11 integration tests for routing
-
 ## 🎨 Styling
 
 The project uses SCSS modules for scoped styling with a modular structure:
@@ -249,15 +244,6 @@ The project uses SCSS modules for scoped styling with a modular structure:
 - **Global Styles**: `src/styles/App.scss`
 - **Component Styles**: `src/styles/components/*.module.scss`
 - **Design Tokens**: Color palette, spacing, and typography defined in component stylesheets
-
-### Color Scheme
-
-- **Primary**: #667eea (Purple)
-- **Secondary**: #5a67d8 (Dark Purple)
-- **Success**: #10b981 (Green)
-- **Error**: #ef4444 (Red)
-- **Warning**: #f59e0b (Orange)
-- **Info**: #3b82f6 (Blue)
 
 ## 🔐 Authentication
 
@@ -287,21 +273,6 @@ The application implements comprehensive error handling:
 ```bash
 npm run build
 ```
-
-This creates an optimized production build in the `dist/` directory.
-
-### Bundle Analysis
-
-- CSS: ~47 KB (gzipped: ~13 KB)
-- JavaScript: ~460 KB (gzipped: ~145 KB)
-- Total: ~507 KB (gzipped: ~158 KB)
-
-## 🤝 Contributing
-
-1. Create a feature branch (`git checkout -b feature/amazing-feature`)
-2. Commit your changes (`git commit -m 'Add amazing feature'`)
-3. Push to the branch (`git push origin feature/amazing-feature`)
-4. Open a Pull Request
 
 ## 📝 Git Workflow
 
