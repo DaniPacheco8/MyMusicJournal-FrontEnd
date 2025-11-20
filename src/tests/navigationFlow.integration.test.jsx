@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from '../context/AuthContext';
+import { ToastProvider } from '../context/ToastContext';
 import Router from '../application/Router';
 
 // Mock da API
@@ -18,7 +19,9 @@ const renderApp = () => {
   return render(
     <BrowserRouter>
       <AuthProvider>
-        <Router />
+        <ToastProvider>
+          <Router />
+        </ToastProvider>
       </AuthProvider>
     </BrowserRouter>
   );
